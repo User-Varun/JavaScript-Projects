@@ -8,6 +8,7 @@
 
 html {
   font-size: 62.5%;
+  /* from now on 1rem = 10px */
   box-sizing: border-box;
 }
 
@@ -28,6 +29,8 @@ main {
   height: 57rem;
   overflow: hidden;
   display: flex;
+  background-color: rgba(255, 255, 255, 0.36);
+  border-radius: 1rem;
 }
 
 .box {
@@ -69,19 +72,19 @@ main {
   padding: 0.7rem 2.5rem;
   background-color: white;
   border: none;
-  border-radius: 35px;
+  border-radius: 3.5rem;
   font-size: 1.8rem;
   color: #444;
 }
 
 .box h2 {
-  font-size: 40px;
+  font-size: 4rem;
   color: #333;
   font-family: 'Nunito', sans-serif;
   letter-spacing: 0.2rem;
 }
 
-.current-score-label {
+.total-score-label {
   font-size: 8rem;
   font-weight: 300;
   color: #c7365f;
@@ -94,17 +97,25 @@ main {
   width: 65%;
   text-align: center;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .current-label {
-  font-size: 17px;
+  font-size: 1.7rem;
 }
 
-.total-score-label {
-  font-size: 35px;
+.current-score-label {
+  font-size: 3.5rem;
 }
 
 .player-label {
   margin-bottom: 1rem;
+}
+
+.active-player-indicator-color {
+  background-color: rgba(255, 255, 255, 0.36);
+}
+
+.hidden {
+  display: none;
 }
