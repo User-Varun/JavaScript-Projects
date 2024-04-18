@@ -6,6 +6,23 @@ let score = 20;
 let highscore = 0;
 let currentScore;
 
+// Preloading all the audios
+const audio1 = new Audio('game-sounds/No-number-sound.mp3');
+const audio2 = new Audio('game-sounds/Too-low-sound.mp3');
+const audio3 = new Audio('game-sounds/Too-high-sound.mp3');
+const audio4 = new Audio('game-sounds/winning-game-sound.mp3');
+const audio5 = new Audio('game-sounds/losing-game-sound.mp3');
+audio1.preload = 'auto';
+audio2.preload = 'auto';
+audio3.preload = 'auto';
+audio4.preload = 'auto';
+audio5.preload = 'auto';
+audio1.volume = 0.2;
+audio2.volume = 0.2;
+audio3.volume = 0.2;
+audio4.volume = 0.2;
+audio5.volume = 0.2;
+
 const bodytag = document.querySelector('body');
 
 let currentScoreNumber = document.querySelector('.current-score-number');
@@ -30,33 +47,21 @@ checkBtn.addEventListener('click', function () {
 
   //   countering user inputs (if win or lose )
   if (!userInputValue) {
+    audio1.play();
     gameInfoText.textContent = '⛔️ No number!';
-
-    const audio = new Audio('game-sounds/No-number-sound.wav');
-    audio.volume = 0.2;
-    audio.preload = 'auto';
-    audio.play();
   } else if (userInputValue < secretNumber) {
+    audio2.play();
     gameInfoText.textContent = '📉 Too low!';
-    const audio = new Audio('game-sounds/Too-low-sound.wav');
-    audio.volume = 0.2;
-    audio.preload = 'auto';
-    audio.play();
   } else if (userInputValue > secretNumber) {
+    audio3.play();
     gameInfoText.textContent = '📈 Too high!';
-    const audio = new Audio('game-sounds/Too-high-sound.wav');
-    audio.volume = 0.2;
-    audio.preload = 'auto';
-    audio.play();
   } else if (userInputValue === secretNumber) {
+    audio4.play();
+
     gameInfoText.textContent = '🎉 Correct Number!';
     bodytag.style.backgroundColor = '#60b347';
     scoreBox.textContent = secretNumber;
     scoreBox.style.width = '30rem';
-    const audio = new Audio('game-sounds/winning-game-sound.wav');
-    audio.volume = 0.2;
-    audio.preload = 'auto';
-    audio.play();
   }
 
   //   countering the score functionality
@@ -65,12 +70,9 @@ checkBtn.addEventListener('click', function () {
     currentScore = currentScoreNumber.textContent;
     console.log('current score when user inputs no value', currentScore);
   } else if (score === 0) {
+    audio5.play();
     gameInfoText.textContent = '💥 You lost the game';
     score = currentScoreNumber.textContent;
-    const audio = new Audio('game-sounds/losing-game-sound.wav');
-    audio.volume = 0.2;
-    audio.preload = 'auto';
-    audio.play();
   } else if (userInputValue === secretNumber) {
     currentScoreNumber.textContent = currentScoreNumber.textContent;
   } else {

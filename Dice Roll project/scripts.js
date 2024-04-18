@@ -75,7 +75,7 @@ holdBtn.addEventListener('click', function () {
     // 3. if (user has more than 100pts in their total score then they win , otherwise player swtiches)
     if (
       document.querySelector(`.player-${activePlayer}-total-score`)
-        .textContent >= 25
+        .textContent >= 50
     ) {
       //  user wins
       document
