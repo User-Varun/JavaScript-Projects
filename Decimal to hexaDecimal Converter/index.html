@@ -18,15 +18,14 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f7c25a
+            background-color: #f7c25a;
+            font-size: 62.5%;
         }
 
         .main{ 
          background-color: #ffffff;
-         padding: 5rem;
+        padding: 0 5rem 5rem 5rem;
          border-radius: 0.7rem;
-         height: 20rem;
-         position: relative;
         }
         .form{
             display: flex;
@@ -36,7 +35,7 @@
         .btn{
           border: none;
           background-color: #ffa532;
-          padding: 0.7rem;
+          padding: 0.3rem;
           border-radius: 50%;
         }
 
@@ -50,12 +49,12 @@
 
         .answer{
             background-color: #d8d8d8;
-    display: flex;
-    justify-content: flex-start;
+        display: inline-flex;
+     
     font-size: 2.2rem;
     padding: 1.2rem 2rem;
     margin-top: 3rem;
-    position: relative;
+    border-radius: 0.4rem;
         }
 
      .main p{
@@ -68,24 +67,29 @@
     font-size: 2.2rem;
      }
 
+      .label{
+            font-size: 2.8rem;
+    padding: 3.5rem 0rem;
+    display: flex;
+      }
 
+      
     
     </style>
 </head>
 <body>
     <main class="main" >
-
+        <label class="label" >Decimal to hex Converter ✌</label>
         <form class="form" >
-            <input type='number' class="form-input-decimal">
+           
+            <input type='number' class="form-input-decimal" name="decimal-input" placeholder="Decimal Number here!" >
             <button class="btn"><img src="rightArr.png" alt="submit"></button>
         </form>
         
-
-
         <div class="answer" >
-        <p>In HexaDecimal it's &rightarrow;</p> 
+        <p>In Hex it's &rightarrow;</p> 
         </span> 
-        <span class="result" ></span>
+        <span class="result" >...</span>
         </div>
     </main>
 

@@ -3,6 +3,9 @@ const input = document.querySelector(".form-input-decimal");
 const submitBtn = document.querySelector(".btn");
 const result = document.querySelector(".result");
 
+// Focusing on input el
+window.onload = () => input.focus();
+
 // Representation of Hexadecimal number system
 const hexaDecimalTable = [
   { key: 0, value: 0 },
@@ -49,11 +52,11 @@ const getNumbers = function (startingNumber) {
     startingNumber = acc / 16;
   }
 
-  // pushing last fraction in fraction array
-
   // Removing the first element from intArr and fracArr
   intArr.shift();
   fracArr.shift();
+
+  // Stating for if user interted 0
 
   return { intArr, fracArr };
 };
@@ -63,7 +66,10 @@ submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
   const userInput = Number(input.value);
 
-  const { intArr, fracArr } = getNumbers(userInput);
+  let { intArr, fracArr } = getNumbers(userInput);
+
+  // Adding Zero to array when user Inter Zero
+  if (userInput === 0) fracArr.push(0);
 
   const reminder = fracArr.map((fraction) => fraction * 16).reverse();
 
